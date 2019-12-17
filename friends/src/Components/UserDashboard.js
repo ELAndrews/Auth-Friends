@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axiosWithAuth from "./axiosWithAuth";
 import FriendsList from "./FriendsList";
 import EditFriends from "./EditFriend";
 import { Route, NavLink } from "react-router-dom";
@@ -9,12 +9,8 @@ export default function UserDashboard() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:5000/api/friends", {
-        headers: {
-          Authorization: localStorage.getItem("token")
-        }
-      })
+    axiosWithAuth()
+      .get("http://localhost:5000/api/friends")
       .then(res => {
         setFriends(res.data);
       })
