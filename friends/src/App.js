@@ -5,7 +5,10 @@ import Login from "./Components/Login";
 import UserDashboard from "./Components/UserDashboard";
 
 function App(props) {
-  const logout = () => {};
+  const logout = () => {
+    localStorage.removeItem("token");
+    props.history.push("/");
+  };
   return (
     <div className="App">
       <nav>
