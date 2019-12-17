@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Route, NavLink, withRouter, Redirect } from "react-router-dom";
+import Login from "./Components/Login";
+import UserDashboard from "./Components/UserDashboard";
 
-function App() {
+function App(props) {
+  const logout = () => {};
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <NavLink exact to="/">
+          Login
+        </NavLink>
+        <NavLink to="/myDashboard">My Dashboard</NavLink>
+        <button onClick={logout}>Log Out</button>
+      </nav>
+      <Route exact path="/" component={Login} />
+      <Route
+        exact
+        path="/myDashboard"
+        render={props => withAuthChecked(UserDashboard, props)}
+      />
     </div>
   );
 }
 
-export default App;
+function withAuthChecked(Component, props) {
+  if (localStorage.getItem("token")) {
+    return <Component {...props} />;
+  } else {
+    alert(`You need to login to access "My Dashboard"`);
+    return <Redirect to="/" />;
+  }
+}
+
+export default withRouter(App);
