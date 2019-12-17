@@ -24,15 +24,32 @@ export default function EditFriends(props) {
       });
   };
 
+  const handleDelete = e => {
+    const id = e.target.value;
+    axiosWithAuth()
+      .delete(`http://localhost:5000/api/friends/${id}`)
+      .then(res => {
+        props.setFriends(res.data);
+      })
+      .catch(err => {
+        setError(err);
+      });
+  };
+
   return (
     <div className="editFriendsContainer">
-      <div className="friends">
+      <div className="editfriends">
         {props.friends.map((curr, index) => {
           return (
             <div key={index} className="friendCard">
               <p>{curr.name}</p>
               <span>age: {curr.age}</span> <br />
               <span>email: {curr.email}</span>
+              <button
+                onClick={handleDelete}
+                className="deleteBtn"
+                value={curr.id}
+              >{`\u2296`}</button>
             </div>
           );
         })}
