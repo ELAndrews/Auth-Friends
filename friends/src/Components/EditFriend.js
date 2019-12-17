@@ -54,7 +54,7 @@ export default function EditFriends(props) {
           );
         })}
       </div>
-      <div className="form">
+      <div className="formContainer">
         <h3>Add a New Friend</h3>
         <form onSubmit={handleSubmit}>
           Name: <input type="text" name="name" onChange={handleChange} /> <br />

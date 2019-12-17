@@ -7,7 +7,7 @@ export default function FriendsList(props) {
         return (
           <div key={index} className="friendCard">
             <p>{curr.name}</p>
-            <span>age: {curr.age}</span> <br />
+            <span>age: {curr.age}</span>
             <span>email: {curr.email}</span>
           </div>
         );

@@ -21,16 +21,25 @@ export default function UserDashboard() {
 
   return (
     <div>
-      <nav className="dashHeader">
-        My Dashboard
-        <NavLink to="/myDashboard/friends">My Friends</NavLink>
-        <NavLink to="/myDashboard/edit">Edit Friends</NavLink>
-      </nav>
-      <h4>My Friends</h4>
+      <div className="dashHeader">
+        <h1>My Dashboard</h1>
+      </div>
+      <div className="editBtn">
+        <NavLink className="edit" to="/myDashboard/edit">
+          Edit
+        </NavLink>
+        {`\u270F`}
+      </div>
+      <NavLink to="/myDashboard" className="title">
+        My Friends
+      </NavLink>
+
       <Route
-        path="/myDashboard/friends"
+        exact
+        path="/myDashboard"
         render={props => <FriendsList friends={friends} />}
       />
+
       <Route
         path="/myDashboard/edit"
         render={props => (

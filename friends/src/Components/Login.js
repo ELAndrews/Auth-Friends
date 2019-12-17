@@ -25,7 +25,7 @@ export default function Login(props) {
   };
 
   return (
-    <div>
+    <div className="loginForm">
       <h3>Log In</h3>
       <form onSubmit={handleSubmit}>
         Username: <input ref={usernameRef} type="text" />

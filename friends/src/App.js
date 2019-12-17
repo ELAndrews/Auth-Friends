@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./App.scss";
 import { Route, NavLink, withRouter, Redirect } from "react-router-dom";
 import Login from "./Components/Login";
 import UserDashboard from "./Components/UserDashboard";
@@ -12,17 +12,23 @@ function App(props) {
   return (
     <div className="App">
       <nav>
-        <NavLink exact to="/">
-          Login
-        </NavLink>
-        <NavLink to="/myDashboard">My Dashboard</NavLink>
+        <div className="linkContainer">
+          <NavLink className="link" exact to="/">
+            Login
+          </NavLink>
+          <NavLink className="link" to="/myDashboard">
+            My Dashboard
+          </NavLink>
+        </div>
         <button onClick={logout}>Log Out</button>
       </nav>
-      <Route exact path="/" component={Login} />
-      <Route
-        path="/myDashboard"
-        render={props => withAuthChecked(UserDashboard, props)}
-      />
+      <div className="content">
+        <Route exact path="/" component={Login} />
+        <Route
+          path="/myDashboard"
+          render={props => withAuthChecked(UserDashboard, props)}
+        />
+      </div>
     </div>
   );
 }
