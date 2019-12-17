@@ -20,7 +20,6 @@ function App(props) {
       </nav>
       <Route exact path="/" component={Login} />
       <Route
-        exact
         path="/myDashboard"
         render={props => withAuthChecked(UserDashboard, props)}
       />

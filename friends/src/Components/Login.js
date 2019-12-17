@@ -30,7 +30,7 @@ export default function Login(props) {
       <form onSubmit={handleSubmit}>
         Username: <input ref={usernameRef} type="text" />
         Password: <input ref={passwordRef} type="password" />
-        <input type="submit" />
+        <button>Submit</button>
       </form>
     </div>
   );
