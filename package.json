@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "nodemon server.js",
-    "build": "mkdir -p public && cp index.html script.js public"
+    "build": "mkdir -p public && cd client && npm install && npm run build"
   },
   "author": "Lambda School",
   "license": "ISC"
