@@ -1,0 +1,223 @@
+.App {
+  text-align: center;
+}
+// ===== Header ===== //
+nav {
+  height: 70px;
+  width: 100vw;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
+  background-color: #87bdd8;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-top: 5px;
+  // z-index: 1;
+
+  .linkContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto 0px;
+
+    .link {
+      color: white;
+      text-decoration: none;
+      margin: 5px 20px;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+
+  button {
+    color: white;
+    font-size: 1rem;
+    background-color: #87bdd8;
+    border: none;
+    height: 20px;
+    margin: auto 0px;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+// ===== Main content ===== //
+
+.content {
+  margin-top: 150px;
+}
+
+// ===== Login ===== //
+
+.loginForm {
+  width: 50%;
+  max-width: 300px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 20px 20px 20px;
+  border: 2px solid #87bdd8;
+  border-radius: 10px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      margin: 15px auto;
+      width: 80%;
+    }
+
+    button {
+      margin: 0px auto;
+      background-color: #87bdd8;
+      color: white;
+      padding: 3px 10px;
+      border: 1px solid #87bdd8;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: white;
+        color: #87bdd8;
+      }
+    }
+  }
+}
+
+// ===== My Dashboard ===== //
+
+.dashHeader {
+  width: 50%;
+  position: absolute;
+  top: 0px;
+  color: white;
+  background-color: #87bdd8;
+  left: 25%;
+  height: 65px;
+}
+
+.title {
+  position: relative;
+  bottom: 50px;
+  font-size: 1.4rem;
+  color: #032a43;
+}
+
+// ===== Friends List ===== //
+
+.friends {
+  width: 50%;
+  max-width: 400px;
+  margin: -50px auto 0px;
+  height: 75vh;
+  overflow: scroll;
+
+  .friendCard {
+    margin: 25px 0px;
+    box-shadow: 0px 1px 5px 0px #87bdd8;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    line-height: 1.6;
+  }
+}
+
+.editBtn {
+  position: absolute;
+  right: 10px;
+  top: 90px;
+  color: #032a43;
+  font-weight: bold;
+  width: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  .edit {
+    text-decoration: none;
+    color: #032a43;
+  }
+}
+
+// ===== Edit Friends ===== //
+
+.editFriendsContainer {
+  display: flex;
+  margin: 0px auto;
+  width: 90%;
+  max-width: 800px;
+  justify-content: space-evenly;
+
+  .editfriends {
+    height: 75vh;
+    overflow: scroll;
+    width: 50%;
+
+    .friendCard {
+      margin: 25px auto;
+      box-shadow: 0px 1px 5px 0px #87bdd8;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+    }
+
+    .deleteBtn {
+      position: relative;
+      font-size: 2rem;
+      border: none;
+      width: 50px;
+      height: 50px;
+      color: red;
+      bottom: 100px;
+    }
+  }
+
+  .formContainer {
+    width: 50%;
+
+    h3 {
+      position: relative;
+      top: 60px;
+    }
+
+    form {
+      max-width: 200px;
+      margin: 0px auto;
+      display: flex;
+      flex-direction: column;
+      padding: 70px 20px 20px 20px;
+      border: 2px solid #87bdd8;
+      border-radius: 10px;
+      height: 60%;
+
+      input {
+        margin: 15px auto;
+        width: 80%;
+      }
+
+      button {
+        margin: 0px auto;
+        background-color: #87bdd8;
+        color: white;
+        padding: 3px 10px;
+        border: 1px solid #87bdd8;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          background-color: white;
+          color: #87bdd8;
+        }
+      }
+    }
+  }
+}
